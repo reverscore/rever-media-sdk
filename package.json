@@ -11,7 +11,7 @@
   "files": [
     "lib"
   ],
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "keywords": [
     "sdk",
     "media",
@@ -45,7 +45,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run build && git add ."
+      "pre-commit": "lint-staged && npm run build && git add dist"
     }
   },
   "eslintConfig": {
