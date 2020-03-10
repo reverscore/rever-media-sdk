@@ -1,0 +1,81 @@
+{
+  "name": "rever-media-sdk",
+  "version": "1.0.0",
+  "description": "Our client-side SDK to handle image and file uploads and downloads.",
+  "homepage": "",
+  "author": {
+    "name": "Rever Score",
+    "email": "info@reverscore.com",
+    "url": "https://reverscore.com"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "dist/index.js",
+  "keywords": [
+    "sdk",
+    "media",
+    "rever"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.6.0",
+    "eslint-config-xo": "^0.27.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.9",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.4.3",
+    "prettier": "^1.19.1"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "lint-staged": {
+    "lib/**/*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run build && git add dist"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "build": "rm -rf dist && npx babel lib --out-dir dist --ignore '**/*.test.js'"
+  },
+  "repository": "git@github.com:reverscore/rever-media-sdk.git",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "private": true,
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0",
+    "core-js": "^3.6.4"
+  }
+}
