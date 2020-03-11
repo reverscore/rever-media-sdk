@@ -66,12 +66,13 @@ function _init() {
 
           case 4:
             organization = _context.sent;
+            validateOrganizationAuthArgs(organization, args);
             reverMediaInstance = new _ReverMedia.default(_objectSpread({}, args, {
               organization: organization
             }));
             return _context.abrupt("return", reverMediaInstance);
 
-          case 7:
+          case 8:
           case "end":
             return _context.stop();
         }
@@ -131,4 +132,10 @@ function _fetchOrganizationData() {
     }, _callee2, null, [[0, 9]]);
   }));
   return _fetchOrganizationData.apply(this, arguments);
+}
+
+function validateOrganizationAuthArgs(organization, args) {
+  var _ref, _args$error;
+
+  return (_ref = args === null || args === void 0 ? void 0 : (_args$error = args.error) === null || _args$error === void 0 ? void 0 : _args$error.x) !== null && _ref !== void 0 ? _ref : null;
 }
