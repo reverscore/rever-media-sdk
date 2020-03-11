@@ -21,6 +21,7 @@
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
+    "axios-mock-adapter": "^1.17.0",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.6.0",
     "eslint-config-xo": "^0.27.2",
@@ -71,11 +72,13 @@
   },
   "repository": "git@github.com:reverscore/rever-media-sdk.git",
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "jsdom"
   },
   "private": true,
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
-    "core-js": "^3.6.4"
+    "axios": "^0.19.2",
+    "core-js": "^3.6.4",
+    "lodash": "^4.17.15"
   }
 }
