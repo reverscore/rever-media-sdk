@@ -8,6 +8,8 @@ require("core-js/modules/es.array.filter");
 
 require("core-js/modules/es.array.for-each");
 
+require("core-js/modules/es.array.includes");
+
 require("core-js/modules/es.object.get-own-property-descriptor");
 
 require("core-js/modules/es.object.get-own-property-descriptors");
@@ -17,6 +19,8 @@ require("core-js/modules/es.object.keys");
 require("core-js/modules/es.object.to-string");
 
 require("core-js/modules/es.promise");
+
+require("core-js/modules/es.string.includes");
 
 require("core-js/modules/es.string.trim");
 
@@ -53,7 +57,6 @@ function _init() {
   _init = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
     var args,
         organization,
-        reverMediaInstance,
         _args = arguments;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
@@ -67,12 +70,11 @@ function _init() {
           case 4:
             organization = _context.sent;
             validateOrganizationAuthArgs(organization, args);
-            reverMediaInstance = new _ReverMedia.default(_objectSpread({}, args, {
+            return _context.abrupt("return", new _ReverMedia.default(_objectSpread({}, args, {
               organization: organization
-            }));
-            return _context.abrupt("return", reverMediaInstance);
+            })));
 
-          case 8:
+          case 7:
           case "end":
             return _context.stop();
         }
@@ -135,7 +137,13 @@ function _fetchOrganizationData() {
 }
 
 function validateOrganizationAuthArgs(organization, args) {
-  var _ref, _args$error;
+  var _ref;
 
-  return (_ref = args === null || args === void 0 ? void 0 : (_args$error = args.error) === null || _args$error === void 0 ? void 0 : _args$error.x) !== null && _ref !== void 0 ? _ref : null;
+  var authenticationType = (_ref = organization === null || organization === void 0 ? void 0 : organization.authenticationType) !== null && _ref !== void 0 ? _ref : '';
+  var azureToken = args === null || args === void 0 ? void 0 : args.azureToken;
+  var organizationUsesAzureAuth = authenticationType.includes('azure');
+
+  if (organizationUsesAzureAuth && !azureToken) {
+    throw new Error('azureToken param is required for organizations using Azure as authentication strategy');
+  }
 }

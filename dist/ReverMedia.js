@@ -13,6 +13,7 @@ var ReverMedia = function ReverMedia(args) {
   this.reverURL = args.reverURL;
   this.reverToken = args.reverToken;
   this.organization = args.organization;
+  this.azureToken = args.azureToken;
 };
 
 exports.default = ReverMedia;
