@@ -9,7 +9,7 @@
     "url": "https://reverscore.com"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "main": "dist/index.js",
   "keywords": [
@@ -48,7 +48,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run build && git add dist"
+      "pre-commit": "lint-staged && npm run build"
     }
   },
   "eslintConfig": {
@@ -72,7 +72,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "build": "rm -rf dist && npx babel lib --out-dir dist --ignore '**/*.test.js'"
+    "build": "rm -rf dist && npx babel lib --out-dir dist --ignore '**/*.test.js'",
+    "prepublish": "npm run build"
   },
   "repository": "git@github.com:reverscore/rever-media-sdk.git",
   "jest": {
