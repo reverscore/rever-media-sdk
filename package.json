@@ -9,7 +9,8 @@
     "url": "https://reverscore.com"
   },
   "files": [
-    "dist"
+    "dist",
+    "lib"
   ],
   "main": "dist/index.js",
   "keywords": [
