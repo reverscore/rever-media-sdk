@@ -67,7 +67,10 @@
     },
     "plugins": [
       "prettier"
-    ]
+    ],
+    "globals": {
+      "FormData": "readonly"
+    }
   },
   "scripts": {
     "test": "jest",
