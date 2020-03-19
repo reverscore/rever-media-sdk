@@ -69,7 +69,8 @@
       "prettier"
     ],
     "globals": {
-      "FormData": "readonly"
+      "FormData": "readonly",
+      "Blob": "readonly"
     }
   },
   "scripts": {
