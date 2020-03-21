@@ -68,7 +68,11 @@
     },
     "plugins": [
       "prettier"
-    ]
+    ],
+    "globals": {
+      "FormData": "readonly",
+      "Blob": "readonly"
+    }
   },
   "scripts": {
     "test": "jest",
@@ -85,6 +89,7 @@
     "@babel/polyfill": "^7.7.0",
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "uuidv4": "^6.0.6"
   }
 }
