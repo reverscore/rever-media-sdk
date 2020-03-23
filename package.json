@@ -64,7 +64,8 @@
     },
     "rules": {
       "prettier/prettier": "error",
-      "strict": 0
+      "strict": 0,
+      "camelcase": 0
     },
     "plugins": [
       "prettier"

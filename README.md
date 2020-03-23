@@ -21,7 +21,7 @@ const reverMediaClient = await ReverMedia.init({
   reverURL: 'https://env-app.reverscore.com/api/v1', // Please note the inclusion of "/api/v1"
   reverToken: 'A Rever session token',
   organizationId: 'Organization Id',
-  azureToken: 'Azure Storage Token', // Only required if the specified organization uses Azure as authentication method
+  azureStorageToken: 'Azure Storage Token', // Only required if the specified organization uses Azure as authentication method
 });
 ```
 
