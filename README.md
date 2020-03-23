@@ -50,9 +50,9 @@ Here's an example of what you can expect to find in a `Rever Media Object`:
 }
 ```
 
-### `uploadImage({ file, fileExtension, filePath, fileType })`
+### `upload({ file, fileExtension, filePath, fileType })`
 
-This method allows to upload an image, either by passing a BLOB file or only specifying the file's path in a mobile device. It returns a `Rever Media Object`.
+This method allows to upload a file, either by passing a BLOB object or only specifying the file's path in a mobile device. It returns a `Rever Media Object`.
 
 #### Important notes:
 
