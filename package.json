@@ -64,14 +64,18 @@
     },
     "rules": {
       "prettier/prettier": "error",
-      "strict": 0
+      "strict": 0,
+      "camelcase": 0
     },
     "plugins": [
       "prettier"
     ],
     "globals": {
       "FormData": "readonly",
-      "Blob": "readonly"
+      "Blob": "readonly",
+      "navigator": "readonly",
+      "document": "readonly",
+      "window": "readonly"
     }
   },
   "scripts": {
