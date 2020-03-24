@@ -54,9 +54,10 @@ Here's an example of what you can expect to find in a `Rever Media Object`:
 
 This method allows to upload a file, either by passing a BLOB object or only specifying the file's path in a mobile device. It returns a `Rever Media Object`.
 
-#### Important note:
+#### Important notes:
 
 - When uploading a BLOB file, the `fileExtension` argument is required in order to properly generate the file name.
+- A list of supported file types can be found [in this Wiki page](https://github.com/reverscore/rever-media-sdk/wiki/Supported-File-Types).
 
 #### Uploading BLOB file (for Web clients)
 
@@ -70,7 +71,7 @@ function base64ToBLOB(base64) {
     array.push(binary.charCodeAt(i));
   }
 
-  return new window.Blob([new Uint8Array(array)], { type: 'image/png' });
+  return new window.Blob([new Uint8Array(array)], { type: 'image/jpg' });
 }
 
 const base64Image = 'some base64 string';
@@ -78,8 +79,8 @@ const blobImage = base64ToBLOB(base64Image);
 
 const reverMediaObject = await reverMediaClient.uploadImage({
   file,
-  fileExtension: 'png',
-  fileType: 'image/png',
+  fileExtension: 'jpg', // Or .jpg
+  fileType: 'image/jpg',
 });
 ```
 
@@ -91,5 +92,3 @@ const reverMediaObject = await reverMediaClient.uploadImage({
   fileType: 'image/jpeg',
 });
 ```
-
-For a list of the most common image file types please refer to [the official MDN documentation](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types).
