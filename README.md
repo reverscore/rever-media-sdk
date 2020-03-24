@@ -54,10 +54,9 @@ Here's an example of what you can expect to find in a `Rever Media Object`:
 
 This method allows to upload a file, either by passing a BLOB object or only specifying the file's path in a mobile device. It returns a `Rever Media Object`.
 
-#### Important notes:
+#### Important note:
 
-- When uploading a BLOB file, the `fileExtension` argument is required.
-- When uploading a file using only its path, the `fileType` argument is required.
+- When uploading a BLOB file, the `fileExtension` argument is required in order to properly generate the file name.
 
 #### Uploading BLOB file (for Web clients)
 
@@ -80,6 +79,7 @@ const blobImage = base64ToBLOB(base64Image);
 const reverMediaObject = await reverMediaClient.uploadImage({
   file,
   fileExtension: 'png',
+  fileType: 'image/png',
 });
 ```
 
