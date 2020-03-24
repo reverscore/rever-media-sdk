@@ -8,6 +8,14 @@ Our client-side SDK to handle image and file uploads and downloads.
 npm i -s reverscore/rever-media-sdk
 ```
 
+Additionally, our mobile app requires to install `rn-fetch-blob` to handle BLOB files in React Native.
+
+```
+npm i -s rn-fetch-blob@0.10.5
+```
+
+### Since we still using React Native v0.59 we MUST install the 0.10.5 version of rn-fetch-blob.
+
 ## Main API
 
 The Rever Media SDK module works as a factory, exposing only one `init` method to get a `ReverMediaClient` instance.
