@@ -104,3 +104,7 @@ const reverMediaObject = await reverMediaClient.uploadImage({
 ### `fetchBase64Image(reverMediaObject)`
 
 It returns the base64 string corresponding to the provided Rever Media object.
+
+### `setAzureStorageToken(newAzureStorageToken)`
+
+Allows to update the Azure Storage token to use for requests. This method is expected to be called by our apps after getting a new valid token.
