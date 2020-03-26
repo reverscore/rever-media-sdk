@@ -1,7 +1,7 @@
 {
   "name": "rever-media-sdk",
   "version": "1.0.0",
-  "description": "Our client-side SDK to handle image and file uploads and downloads.",
+  "description": "Our JavaScript SDK to handle image and file uploads and downloads.",
   "homepage": "",
   "author": {
     "name": "Rever Score",
@@ -12,7 +12,7 @@
     "dist",
     "lib"
   ],
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "keywords": [
     "sdk",
     "media",
@@ -82,7 +82,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "build": "rm -rf dist && npx babel lib --out-dir dist --ignore '**/*.test.js'",
+    "build": "rm -rf dist && npx babel lib --out-dir dist --ignore lib/__tests__,lib/__mocks__",
     "prepublish": "npm run build",
     "prepare": "install-peers"
   },
