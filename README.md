@@ -101,7 +101,7 @@ const reverMediaObject = await reverMediaClient.uploadImage({
 });
 ```
 
-### `fetchAsBase64(reverMediaObject)`
+### `fetchBase64(reverMediaObject)`
 
 It returns the base64 string corresponding to the provided Rever Media object.
 
