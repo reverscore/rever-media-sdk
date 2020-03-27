@@ -1,6 +1,6 @@
 # Rever Media SDK
 
-Our client-side SDK to handle image and file uploads and downloads.
+Our JavaScript SDK to handle image and file uploads and downloads.
 
 ## Installation
 
@@ -101,10 +101,27 @@ const reverMediaObject = await reverMediaClient.uploadImage({
 });
 ```
 
-### `fetchBase64Image(reverMediaObject)`
+### `fetchBase64(reverMediaObject)`
 
 It returns the base64 string corresponding to the provided Rever Media object.
 
 ### `setAzureStorageToken(newAzureStorageToken)`
 
 Allows to update the Azure Storage token to use for requests. This method is expected to be called by our apps after getting a new valid token.
+
+```js
+// Specific Azure tokens refreshing process for each App
+const newTokens = await refreshAzureTokens();
+
+reverMediaClient.setAzureStorageToken(newTokens.storageToken);
+
+console.log(reverMediaClient.azureStorageToken); // Prints newTokens.storageToken
+```
+
+### `download(reverMediaObject)`
+
+Triggers a download process in Web browsers.
+
+#### Important:
+
+This functionality is not available for React Native clients where an error is thrown if this method is called.
