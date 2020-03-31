@@ -31,9 +31,13 @@
     "eslint-plugin-prettier": "^3.1.1",
     "husky": "^3.0.9",
     "install-peers-cli": "^2.2.0",
-    "jest": "^24.8.0",
+    "jest": "^25.2.4",
     "lint-staged": "^9.4.3",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "minimist": "^1.2.5"
+  },
+  "resolutions": {
+    "minimist": "^1.2.5"
   },
   "engines": {
     "npm": ">= 4.0.0"
@@ -84,7 +88,8 @@
     "test:watch": "jest --watchAll",
     "build": "rm -rf dist && npx babel lib --out-dir dist --ignore lib/__tests__,lib/__mocks__",
     "prepublish": "npm run build",
-    "prepare": "install-peers"
+    "prepare": "install-peers",
+    "preinstall": "npx npm-force-resolutions"
   },
   "repository": "git@github.com:reverscore/rever-media-sdk.git",
   "jest": {
@@ -96,6 +101,7 @@
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "lodash": "^4.17.15",
+    "npm-force-resolutions": "0.0.3",
     "uuidv4": "^6.0.6"
   },
   "peerDependencies": {
