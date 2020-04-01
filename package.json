@@ -36,9 +36,6 @@
     "prettier": "^1.19.1",
     "minimist": "^1.2.5"
   },
-  "resolutions": {
-    "minimist": "^1.2.5"
-  },
   "engines": {
     "npm": ">= 4.0.0"
   },
@@ -88,8 +85,7 @@
     "test:watch": "jest --watchAll",
     "build": "rm -rf dist && npx babel lib --out-dir dist --ignore lib/__tests__,lib/__mocks__",
     "prepublish": "npm run build",
-    "prepare": "install-peers",
-    "preinstall": "npx npm-force-resolutions"
+    "prepare": "install-peers"
   },
   "repository": "git@github.com:reverscore/rever-media-sdk.git",
   "jest": {
