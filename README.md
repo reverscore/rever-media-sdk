@@ -85,7 +85,7 @@ function base64ToBLOB(base64) {
 const base64Image = 'some base64 string';
 const blobImage = base64ToBLOB(base64Image);
 
-const reverMediaObject = await reverMediaClient.uploadImage({
+const reverMediaObject = await reverMediaClient.upload({
   file,
   fileExtension: 'jpg', // Or .jpg
   fileType: 'image/jpg',
@@ -95,7 +95,7 @@ const reverMediaObject = await reverMediaClient.uploadImage({
 #### Uploading file passing a file path (for React Native clients)
 
 ```js
-const reverMediaObject = await reverMediaClient.uploadImage({
+const reverMediaObject = await reverMediaClient.upload({
   filePath: '/User/MyTempFiles/my-rev-photo.jpg',
   fileType: 'image/jpeg',
 });
