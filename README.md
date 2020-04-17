@@ -101,9 +101,40 @@ const reverMediaObject = await reverMediaClient.upload({
 });
 ```
 
-### `fetchBase64(reverMediaObject)`
+### `fetchBase64(reverMediaObject, options)`
 
-It returns the base64 string corresponding to the provided Rever Media object.
+It returns the base64 string corresponding to the provided Rever Media object. Additionaly, an `options` object can be passed to specify the desired image size.
+
+```js
+import ReverMedia, { IMAGE_SIZES } from 'rever-media-sdk';
+
+const reverMediaClient = await ReverMedia.init({ ...options });
+
+const base64String = await reverMediaClient.fetchBase64(someMediaObject, {
+  size: IMAGE_SIZES.WIDE,
+});
+```
+
+Available image sizes and their dimensions are the following and can be found in the `IMAGE_SIZES` enum exported by this module:
+
+```
+SQUARE: {
+  width: 120px
+  height: 120px
+},
+THUMBNAIL: {
+  width: 350px
+  height: 430px
+},
+CARD: {
+  width: 440px
+  height: 390px
+},
+WIDE: {
+  width: 850px
+  height: 370px
+}
+```
 
 ### `setAzureStorageToken(newAzureStorageToken)`
 
