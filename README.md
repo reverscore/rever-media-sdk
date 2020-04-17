@@ -104,6 +104,11 @@ const reverMediaObject = await reverMediaClient.upload({
 ### `fetchBase64(reverMediaObject, options)`
 
 It returns the base64 string corresponding to the provided Rever Media object. Additionaly, an `options` object can be passed to specify the desired image size.
+If no size is specified the original image will be returned.
+
+#### Important:
+
+Multiple sizes are only available for images stored in AWS.
 
 ```js
 import ReverMedia, { IMAGE_SIZES } from 'rever-media-sdk';
