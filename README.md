@@ -141,6 +141,17 @@ WIDE: {
 }
 ```
 
+### `fetchToLocalPath(reverMediaObject, options)` (Mobile only)
+
+This method works just like the `fetchBase64` method with the difference it returns the local path where the blob file was stored.
+This is useful for better performance in mobile clients as you can see in the ["Performance tips"](https://github.com/joltup/rn-fetch-blob#user-content-performance-tips) section of the `rn-fetch-blob` module.
+
+![](https://github.com/joltup/rn-fetch-blob/raw/master/img/performance_1.png)
+
+### `clearLocalCache()` (Mobile only)
+
+Deletes any cached blob in mobile clients.
+
 ### `setAzureStorageToken(newAzureStorageToken)`
 
 Allows to update the Azure Storage token to use for requests. This method is expected to be called by our apps after getting a new valid token.
@@ -154,7 +165,7 @@ reverMediaClient.setAzureStorageToken(newTokens.storageToken);
 console.log(reverMediaClient.azureStorageToken); // Prints newTokens.storageToken
 ```
 
-### `download(reverMediaObject)`
+### `download(reverMediaObject)` (Web only)
 
 Triggers a download process in Web browsers.
 
