@@ -16,7 +16,7 @@ npm i -s rn-fetch-blob@0.10.5
 
 ### Since we still using React Native v0.59 we MUST install the 0.10.5 version of rn-fetch-blob.
 
-## Main API
+## Main API (Static methods)
 
 ### `ReverMedia.init({ reverURL, reverToken, organizationId, azureToken })`
 
@@ -53,7 +53,17 @@ const url = getResourceURL(mediaObject, options);
 console.log(url); // Prints https://myresourceurl.com?size=square
 ```
 
-## Rever Media Client API
+### `ReverMedia.clearLocalCache()` (Mobile only)
+
+Deletes any cached blob in mobile clients.
+
+```js
+import { clearLocalCache } from 'rever-media-sdk';
+
+await clearLocalCache();
+```
+
+## Rever Media Client API (Instance methods)
 
 ### Rever Media Objects
 
@@ -168,10 +178,6 @@ This method works just like the `fetchBase64` method with the difference it retu
 This is useful for better performance in mobile clients as you can see in the ["Performance tips"](https://github.com/joltup/rn-fetch-blob#user-content-performance-tips) section of the `rn-fetch-blob` module.
 
 ![](https://github.com/joltup/rn-fetch-blob/raw/master/img/performance_1.png)
-
-### `clearLocalCache()` (Mobile only)
-
-Deletes any cached blob in mobile clients.
 
 ### `setAzureStorageToken(newAzureStorageToken)`
 
