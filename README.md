@@ -18,9 +18,9 @@ npm i -s rn-fetch-blob@0.10.5
 
 ## Main API
 
-The Rever Media SDK module works as a factory, exposing only one `init` method to get a `ReverMediaClient` instance.
-
 ### `ReverMedia.init({ reverURL, reverToken, organizationId, azureToken })`
+
+It works as a factory, it returns a `ReverMediaClient` instance.
 
 ```js
 import ReverMedia from 'rever-media-sdk';
@@ -31,6 +31,26 @@ const reverMediaClient = await ReverMedia.init({
   organizationId: 'Organization Id',
   azureStorageToken: 'Azure Storage Token', // Only required if the specified organization uses Azure as authentication method
 });
+```
+
+### `ReverMedia.getResourceURL(reverMediaObject, options)`
+
+An utility that returns the final URL to be sent to media provider servers. Is specially useful for the cache infrastructure that each client has to build.
+
+```js
+import { IMAGE_SIZES, getResourceURL } from 'rever-media-sdk';
+
+const mediaObject = {
+  url: 'https://myresourceurl.com',
+  provider: 'AWS_S3',
+};
+
+const options = {
+  size: IMAGE_SIZES.SQUARE,
+};
+
+const url = getResourceURL(mediaObject, options);
+console.log(url); // Prints https://myresourceurl.com?size=square
 ```
 
 ## Rever Media Client API
@@ -52,6 +72,7 @@ Here's an example of what you can expect to find in a `Rever Media Object`:
   originalFileName: '63065b39-5c4a-4b0a-80c1-679a9655577a.png',
   isPublic: false,
   account: '5d604eb65696b20017dd4219',
+  provider: 'AWS_S3',
   organization: '5c6ec95082876200173513e0',
   createdAt: '2020-03-20T00:00:00.883Z',
   updatedAt: '2020-03-20T20:00:00.883Z',
