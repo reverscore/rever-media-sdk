@@ -89,7 +89,7 @@ Here's an example of what you can expect to find in a `Rever Media Object`:
 }
 ```
 
-### `upload({ file, fileExtension, filePath, fileType })`
+### `upload({ file, fileExtension, filePath, fileType, isPublic })`
 
 This method allows to upload a file, either by passing a BLOB object or only specifying the file's path in a mobile device. It returns a `Rever Media Object`.
 
@@ -172,7 +172,7 @@ WIDE: {
 }
 ```
 
-### `fetchToLocalPath(reverMediaObject, options)` (Mobile only)
+### `fetchToLocalPath(reverMediaObject, options)`
 
 This method works just like the `fetchBase64` method with the difference it returns the local path where the blob file was stored.
 This is useful for better performance in mobile clients as you can see in the ["Performance tips"](https://github.com/joltup/rn-fetch-blob#user-content-performance-tips) section of the `rn-fetch-blob` module.
