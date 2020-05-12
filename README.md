@@ -11,10 +11,8 @@ npm i -s reverscore/rever-media-sdk
 Additionally, our mobile app requires to install `rn-fetch-blob` to handle BLOB files in React Native.
 
 ```
-npm i -s rn-fetch-blob@0.10.5
+npm i -s rn-fetch-blob
 ```
-
-### Since we still using React Native v0.59 we MUST install the 0.10.5 version of rn-fetch-blob.
 
 ## Main API (Static methods)
 
