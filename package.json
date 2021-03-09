@@ -96,7 +96,7 @@
     "@babel/polyfill": "^7.7.0",
     "axios": "^0.21.1",
     "core-js": "^3.6.4",
-    "js-file-download": "^0.4.11",
+    "js-file-download": "^0.4.12",
     "lodash": "^4.17.19",
     "npm-force-resolutions": "0.0.3",
     "uuid": "^8.3.2"
