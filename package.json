@@ -98,7 +98,7 @@
     "core-js": "^3.6.4",
     "js-file-download": "^0.4.11",
     "lodash": "^4.17.19",
-    "npm-force-resolutions": "0.0.3",
+    "npm-force-resolutions": "0.0.10",
     "uuid": "^8.3.2"
   },
   "peerDependencies": {
