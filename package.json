@@ -52,7 +52,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run build"
+      "pre-commit": "lint-staged"
     }
   },
   "eslintConfig": {
@@ -84,8 +84,6 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "build": "rm -rf dist && npx babel lib --out-dir dist --ignore lib/__tests__,lib/__mocks__",
-    "prepublish": "npm run build",
     "prepare": "install-peers"
   },
   "repository": "git@github.com:reverscore/rever-media-sdk.git",
