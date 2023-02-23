@@ -168,6 +168,10 @@ WIDE: {
   width: 850px
   height: 370px
 }
+MINI: {
+  width: 32px
+  height: 32px
+}
 ```
 
 ### `fetchToLocalPath(reverMediaObject, options)`
