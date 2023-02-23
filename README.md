@@ -8,10 +8,10 @@ Our JavaScript SDK to handle image and file uploads and downloads.
 npm i -s reverscore/rever-media-sdk
 ```
 
-Additionally, our mobile app requires to install `rn-fetch-blob` to handle BLOB files in React Native.
+Additionally, our mobile app requires to install `react-native-blob-util` to handle BLOB files in React Native.
 
 ```
-npm i -s rn-fetch-blob
+npm i -s react-native-blob-util
 ```
 
 ## Main API (Static methods)
@@ -177,7 +177,7 @@ MINI: {
 ### `fetchToLocalPath(reverMediaObject, options)`
 
 This method works just like the `fetchBase64` method with the difference it returns the local path where the blob file was stored.
-This is useful for better performance in mobile clients as you can see in the ["Performance tips"](https://github.com/joltup/rn-fetch-blob#user-content-performance-tips) section of the `rn-fetch-blob` module.
+This is useful for better performance in mobile clients as you can see in the ["Performance tips"](https://github.com/RonRadtke/react-native-blob-util#user-content-performance-tips) section of the `react-native-blob-util` module.
 
 ![](https://github.com/joltup/rn-fetch-blob/raw/master/img/performance_1.png)
 

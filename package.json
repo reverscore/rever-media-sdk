@@ -101,6 +101,6 @@
     "uuid": "^8.3.2"
   },
   "peerDependencies": {
-    "rn-fetch-blob": "*"
+    "react-native-blob-util": "*"
   }
 }
