@@ -2,3 +2,9 @@ node_modules
 coverage
 dist
 .DS_Store
+
+.gitnexus
+.claude/skills/gitnexus/
+CLAUDE.md
+.superpowers
+docs/superpowers/
